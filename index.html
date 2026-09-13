@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="stylesheet" href="./static/css/site.css">
+  <link rel="stylesheet" href="./static/css/site.css?v=3">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -55,14 +55,13 @@
   <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 
-
 <body>
 
 <section class="hero hero-main">
   <div class="hero-body">
     <div class="container">
       <div class="columns is-centered">
-        <div class="column is-two-thirds is-centered has-text-centered">
+        <div class="column is-full is-centered has-text-centered">
           <h1 class="title is-1 publication-title">Safe autonomous long-horizon robotic surgery in live animals with an embodied foundation model</h1>
           <!-- <h2 class="subtitle is-2 publication-subtitle">Autonomous Robotic Surgery</h2> -->
           <div class="publication-authors">
@@ -181,74 +180,35 @@
 
 <nav class="page-nav" aria-label="Section navigation">
   <ul>
-    <li><a href="#team">Team</a></li>
     <li><a href="#abstract">Abstract</a></li>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#experiments">Experiments</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <li><a href="#team">Team</a></li>
   </ul>
 </nav>
 
-<section class="section section-alt" id="team">
+<section class="results-band">
   <div class="container">
-    <h2 class="title is-2">Team</h2>
-    <p class="section-lede">Names are listed in no particular order.</p>
-    <div class="columns is-centered is-multiline team-grid">
-      <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
-        <a href="https://www.linkedin.com/in/yanran-wei/?locale=en_US" target="_blank" style="border-bottom: none;">
-          <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/YanranWei.jpg" alt="Yanran Wei" /></span>
-        </a>
-        <p class="team-member-name">Yanran Wei</p>
+    <div class="results-grid">
+      <div class="stat">
+        <span class="stat-value">100%</span>
+        <span class="stat-label">In vivo subtask success</span>
+        <span class="stat-note">75 / 75, across three live pigs</span>
       </div>
-      <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
-        <a href="https://www.linkedin.com/in/fan-qiao-4724393b4/" target="_blank" style="border-bottom: none;">
-          <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/FanQiao.jpg" alt="Fan Qiao" /></span>
-        </a>
-        <p class="team-member-name">Fan Qiao</p>
+      <div class="stat">
+        <span class="stat-value">100%</span>
+        <span class="stat-label">Anomaly management</span>
+        <span class="stat-note">41 / 41 events, 5 scenarios</span>
       </div>
-      <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
-        <a href="https://heifolier.github.io/ShuoZhang.github.io/" target="_blank" style="border-bottom: none;">
-          <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/ShuoZhang.jpg" alt="Shuo Zhang" /></span>
-        </a>
-        <p class="team-member-name"><a href="https://heifolier.github.io/ShuoZhang.github.io/" target="_blank" style="color: inherit; border-bottom: none;">Shuo Zhang</a></p>
+      <div class="stat">
+        <span class="stat-value">+43%</span>
+        <span class="stat-label">Valid transition rate</span>
+        <span class="stat-note">65.5% &rarr; 94.3% with completion gating</span>
       </div>
-      <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
-        <a href="#" target="_blank" style="border-bottom: none;">
-          <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/MingfengYao.jpg" alt="Mingfeng Yao" /></span>
-        </a>
-        <p class="team-member-name">Mingfeng Yao</p>
-      </div>
-      <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
-        <a href="#" target="_blank" style="border-bottom: none;">
-          <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/WeipingLiu.jpg" alt="Weiping Liu" /></span>
-        </a>
-        <p class="team-member-name">Weiping Liu</p>
-      </div>
-      <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
-        <a href="https://mengguo.github.io/personal_site/" target="_blank" style="border-bottom: none;">
-          <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/MengGuo.png" alt="Meng Guo" /></span>
-        </a>
-        <p class="team-member-name">Meng Guo</p>
-        <p class="team-role">advisor</p>
-      </div>
-      <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
-        <a href="#" target="_blank" style="border-bottom: none;">
-          <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/JiayinWang.jpg" alt="Jiayin Wang" /></span>
-        </a>
-        <p class="team-member-name">Jiayin Wang</p>
-      </div>
-      <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
-        <a href="#" target="_blank" style="border-bottom: none;">
-          <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/ChaoHe.jpg" alt="Chao He" /></span>
-        </a>
-        <p class="team-member-name">Chao He</p>
-      </div>
-      <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
-        <a href="https://www.zhongkuili-pku.com/home/" target="_blank" style="border-bottom: none;">
-          <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/ZhongkuiLi.jpg" alt="Zhongkui Li" /></span>
-        </a>
-        <p class="team-member-name">Zhongkui Li</p>
-        <p class="team-role">advisor</p>
+      <div class="stat">
+        <span class="stat-value">34.9 h</span>
+        <span class="stat-label">Surgeon demonstrations</span>
+        <span class="stat-note">20,541 episodes, 19 ex vivo + 3 in vivo</span>
       </div>
     </div>
   </div>
@@ -322,12 +282,72 @@
   </div>
 </section>
 
+<section class="section section-alt" id="team">
+  <div class="container">
+    <h2 class="title is-2">Team</h2>
+    <p class="section-lede">Names are listed in no particular order.</p>
+    <div class="columns is-centered is-multiline team-grid">
+      <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
+        <a href="https://www.linkedin.com/in/yanran-wei/?locale=en_US" target="_blank" style="border-bottom: none;">
+          <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/YanranWei.jpg" alt="Yanran Wei" /></span>
+        </a>
+        <p class="team-member-name">Yanran Wei</p>
+      </div>
+      <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
+        <a href="https://www.linkedin.com/in/fan-qiao-4724393b4/" target="_blank" style="border-bottom: none;">
+          <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/FanQiao.jpg" alt="Fan Qiao" /></span>
+        </a>
+        <p class="team-member-name">Fan Qiao</p>
+      </div>
+      <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
+        <a href="https://heifolier.github.io/ShuoZhang.github.io/" target="_blank" style="border-bottom: none;">
+          <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/ShuoZhang.jpg" alt="Shuo Zhang" /></span>
+        </a>
+        <p class="team-member-name"><a href="https://heifolier.github.io/ShuoZhang.github.io/" target="_blank" style="color: inherit; border-bottom: none;">Shuo Zhang</a></p>
+      </div>
+      <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
+        <a href="#" target="_blank" style="border-bottom: none;">
+          <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/MingfengYao.jpg" alt="Mingfeng Yao" /></span>
+        </a>
+        <p class="team-member-name">Mingfeng Yao</p>
+      </div>
+      <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
+        <a href="#" target="_blank" style="border-bottom: none;">
+          <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/WeipingLiu.jpg" alt="Weiping Liu" /></span>
+        </a>
+        <p class="team-member-name">Weiping Liu</p>
+      </div>
+      <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
+        <a href="https://mengguo.github.io/personal_site/" target="_blank" style="border-bottom: none;">
+          <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/MengGuo.png" alt="Meng Guo" /></span>
+        </a>
+        <p class="team-member-name">Meng Guo</p>
+        <p class="team-role">advisor</p>
+      </div>
+      <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
+        <a href="#" target="_blank" style="border-bottom: none;">
+          <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/JiayinWang.jpg" alt="Jiayin Wang" /></span>
+        </a>
+        <p class="team-member-name">Jiayin Wang</p>
+      </div>
+      <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
+        <a href="#" target="_blank" style="border-bottom: none;">
+          <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/ChaoHe.jpg" alt="Chao He" /></span>
+        </a>
+        <p class="team-member-name">Chao He</p>
+      </div>
+      <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
+        <a href="https://www.zhongkuili-pku.com/home/" target="_blank" style="border-bottom: none;">
+          <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/ZhongkuiLi.jpg" alt="Zhongkui Li" /></span>
+        </a>
+        <p class="team-member-name">Zhongkui Li</p>
+        <p class="team-role">advisor</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-
-
-
-
-<section class="section section-alt" id="acknowledgements">
+<section class="section" id="acknowledgements">
   <div class="container">
     <div class="columns is-centered has-text-centered">
       <div class="column is-two-thirds">
@@ -341,6 +361,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- <section class="section" id="BibTeX">
   <div class="container content">

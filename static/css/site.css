@@ -93,10 +93,14 @@ a:hover { color: var(--accent-dark); }
   font-family: inherit;
   color: var(--ink);
   font-weight: 700;
-  font-size: clamp(1.5rem, 4.4vw, 2.9rem);
+  /* The title is 94 characters. Empirically it needs roughly 22.7x its font
+     size in width to settle on two balanced lines, so the measure is capped
+     at 1100px and the size tracks the viewport to hold that ratio down to
+     tablet widths. */
+  font-size: clamp(1.5rem, 3.4vw, 3rem);
   line-height: 1.18;
   letter-spacing: -.028em;
-  max-width: 22ch;
+  max-width: 1100px;
   margin: 0 auto;
   text-wrap: balance;
 }
@@ -104,6 +108,8 @@ a:hover { color: var(--accent-dark); }
 .publication-authors {
   font-family: inherit;
   margin-top: 1.75rem;
+  max-width: 940px;
+  margin-inline: auto;
   color: var(--body);
   font-weight: 500;
   font-size: 1.2rem;
@@ -214,6 +220,55 @@ a:hover { color: var(--accent-dark); }
 .page-nav a:hover {
   color: var(--accent-dark);
   background: var(--accent-soft);
+}
+
+/* ----------------------------------------------------------- key results */
+
+.results-band {
+  background: linear-gradient(135deg, #0a1316 0%, #0d2927 52%, #10605c 140%);
+  color: #e8f1f0;
+  padding: 3.5rem 1.5rem;
+}
+
+.results-grid {
+  display: grid;
+  /* Pinned to 2 or 4 columns. `auto-fit` would land on 3 between roughly
+     768px and 1000px, leaving one stat orphaned on a second row. */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.25rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .results-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.stat { text-align: center; }
+
+.stat-value {
+  display: block;
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1.05;
+  color: #fff;
+}
+
+.stat-label {
+  display: block;
+  margin-top: .55rem;
+  font-size: .95rem;
+  font-weight: 600;
+  color: #d2e6e4;
+}
+
+.stat-note {
+  display: block;
+  margin-top: .25rem;
+  font-size: .82rem;
+  line-height: 1.5;
+  color: #8db2af;
 }
 
 /* --------------------------------------------------------------- abstract */
@@ -382,4 +437,8 @@ a:hover { color: var(--accent-dark); }
   .team-avatar-wrap { width: 104px; height: 104px; }
   .video-label { font-size: .72rem; padding: .22rem .55rem; }
   .fig-card { padding: .6rem; }
+  .results-band { padding: 2.5rem 1.25rem; }
+  .results-grid { grid-template-columns: repeat(2, 1fr); gap: 1.75rem 1rem; }
+  .stat-label { font-size: .86rem; }
+  .stat-note { font-size: .75rem; }
 }
