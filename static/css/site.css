@@ -1,0 +1,385 @@
+/* ==========================================================================
+   SharpSurg project page — visual layer
+   Loaded after index.css; overrides the stock Nerfies template styling.
+   ========================================================================== */
+
+:root {
+  --ink: #111820;
+  --body: #39434e;
+  --muted: #707d8a;
+  --accent: #0e6b66;
+  --accent-dark: #0a4f4b;
+  --accent-soft: #e8f3f2;
+  --line: #e3e8ec;
+  --bg: #ffffff;
+  --bg-alt: #f6f8f9;
+  --r: 14px;
+  --sh-sm: 0 1px 2px rgba(17, 24, 32, .05), 0 2px 10px rgba(17, 24, 32, .05);
+  --sh-md: 0 2px 6px rgba(17, 24, 32, .05), 0 16px 40px rgba(17, 24, 32, .09);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+               Roboto, Helvetica, Arial, sans-serif;
+  color: var(--body);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--accent-soft); color: var(--accent-dark); }
+
+a { color: var(--accent); transition: color .15s ease; }
+a:hover { color: var(--accent-dark); }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+[id] { scroll-margin-top: 72px; }
+
+/* --------------------------------------------------------- section rhythm */
+
+.section { padding: 4.5rem 1.5rem; }
+
+.section-alt {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.section .title.is-2,
+.section .title.is-3 {
+  font-family: inherit;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  letter-spacing: -.02em;
+  line-height: 1.25;
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
+.section .title.is-2::after,
+.section .title.is-3::after {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 3px;
+  margin: .9rem auto 0;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.section-lede {
+  margin: -1.5rem auto 2rem;
+  max-width: 60ch;
+  text-align: center;
+  font-size: .95rem;
+  color: var(--muted);
+}
+
+/* ------------------------------------------------------------------- hero */
+
+.hero-main {
+  background: linear-gradient(180deg, #fafcfc 0%, #ffffff 65%);
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-main .hero-body { padding: 4rem 1.5rem 3.5rem; }
+
+.hero-main .title.publication-title {
+  font-family: inherit;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4.4vw, 2.9rem);
+  line-height: 1.18;
+  letter-spacing: -.028em;
+  max-width: 22ch;
+  margin: 0 auto;
+  text-wrap: balance;
+}
+
+.publication-authors {
+  font-family: inherit;
+  margin-top: 1.75rem;
+  color: var(--body);
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.95;
+}
+
+.publication-authors a {
+  color: var(--accent) !important;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color .15s ease, border-color .15s ease;
+}
+
+.publication-authors a:hover {
+  color: var(--accent-dark) !important;
+  border-bottom-color: currentColor;
+  text-decoration: none;
+}
+
+.publication-authors sup {
+  color: var(--muted);
+  font-size: .68em;
+  padding-left: 1px;
+}
+
+.affiliations {
+  margin-top: .5rem;
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.affiliations .author-block { margin: 0 .65rem; }
+
+.org-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(22px, 4.5vw, 54px);
+  margin: 2.5rem auto 0;
+  padding: 0 .5rem;
+}
+
+.org-logo {
+  height: clamp(38px, 5.4vw, 60px);
+  width: auto;
+  max-width: min(40vw, 230px);
+  object-fit: contain;
+  opacity: .92;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.org-logo:hover { opacity: 1; transform: translateY(-2px); }
+
+.teaser-video {
+  display: block;
+  width: 100%;
+  margin-top: 3rem;
+  border-radius: var(--r);
+  box-shadow: var(--sh-md);
+  background: #000;
+}
+
+/* -------------------------------------------------------------------- nav */
+
+.page-nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(255, 255, 255, .84);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.page-nav ul {
+  display: flex;
+  /* flex-start + auto-margin pseudo items: centred when there is room, and
+     scrollable from the true start when it overflows (plain `center` clips
+     the first item unreachably on narrow screens). */
+  justify-content: flex-start;
+  gap: .2rem;
+  margin: 0;
+  padding: .55rem 1rem;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.page-nav ul::before,
+.page-nav ul::after { content: ""; margin: auto; }
+
+.page-nav ul::-webkit-scrollbar { display: none; }
+
+.page-nav a {
+  display: block;
+  white-space: nowrap;
+  padding: .45rem .95rem;
+  border-radius: 999px;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.page-nav a:hover {
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+}
+
+/* --------------------------------------------------------------- abstract */
+
+.abstract-body {
+  max-width: 74ch;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 1.05rem;
+  line-height: 1.82;
+  color: var(--body);
+}
+
+.abstract-body p { margin: 0; }
+
+/* ----------------------------------------------------------------- figure */
+
+.fig-card {
+  margin: 0;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  box-shadow: var(--sh-sm);
+  transition: box-shadow .25s ease;
+}
+
+.fig-card:hover { box-shadow: var(--sh-md); }
+
+.fig-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--r) - 6px);
+}
+
+.fig-zoom { display: block; border-bottom: none; }
+
+.fig-card figcaption {
+  margin-top: 1.1rem;
+  padding: 0 .35rem .2rem;
+  text-align: left;
+  font-size: .9rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.fig-card figcaption b { color: var(--body); font-weight: 600; }
+
+.fig-hint {
+  display: block;
+  margin-top: .7rem;
+  font-size: .8rem;
+  color: var(--muted);
+}
+
+/* ------------------------------------------------------------------- team */
+
+.team-grid { row-gap: 1.75rem; }
+
+.team-card { padding: .5rem; }
+
+.team-avatar-wrap {
+  width: 132px;
+  height: 132px;
+  margin: 0 auto;
+  border: none;
+  box-shadow: 0 0 0 1px var(--line), var(--sh-sm);
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+
+.team-card a:hover .team-avatar-wrap {
+  box-shadow: 0 0 0 2px var(--accent), var(--sh-md);
+  transform: translateY(-3px);
+}
+
+.team-member-name {
+  margin-top: .95rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.team-member-name a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.team-member-name a:hover { color: var(--accent); }
+
+.team-role {
+  margin: .15rem 0 0;
+  font-size: .84rem;
+  color: var(--muted);
+}
+
+/* ------------------------------------------------------------ experiments */
+
+.experiment-video-card {
+  border: none;
+  border-radius: var(--r);
+  box-shadow: var(--sh-md);
+  background: #000;
+}
+
+.video-label {
+  font-size: .92rem;
+  font-weight: 600;
+  letter-spacing: .005em;
+  padding: .32rem .72rem;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(10, 16, 22, .55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  text-shadow: none;
+}
+
+.experiment-caption-title {
+  margin: 1.1rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* ------------------------------------------------------ acknowledgements */
+
+.ack-text {
+  max-width: 60ch;
+  margin: 0 auto;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--body);
+}
+
+/* ----------------------------------------------------------------- footer */
+
+.footer {
+  background: #fff;
+  border-top: 1px solid var(--line);
+  padding: 2.75rem 1.5rem;
+  font-size: .87rem;
+  color: var(--muted);
+}
+
+.footer a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer a:hover { color: var(--accent); }
+
+/* ------------------------------------------------------------- responsive */
+
+@media screen and (max-width: 768px) {
+  .section { padding: 3rem 1.25rem; }
+  .hero-main .hero-body { padding: 2.5rem 1.25rem 2.25rem; }
+  .hero-main .title.publication-title { max-width: 100%; letter-spacing: -.02em; }
+  .publication-authors { font-size: 1.02rem; line-height: 1.85; margin-top: 1.25rem; }
+  .affiliations { font-size: .92rem; }
+  .org-logos { gap: 18px 26px; margin-top: 1.75rem; }
+  .teaser-video { margin-top: 2rem; }
+  .abstract-body { font-size: 1rem; line-height: 1.78; }
+  .team-avatar-wrap { width: 104px; height: 104px; }
+  .video-label { font-size: .72rem; padding: .22rem .55rem; }
+  .fig-card { padding: .6rem; }
+}

@@ -2,12 +2,14 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Auto-Surgery">
-  <meta name="keywords" content="Robotics, Mobile Manipulation, Bimanual Manipulation">
+  <meta name="description" content="SharpSurg: safe autonomous long-horizon robotic surgery in live animals with an embodied foundation model">
+  <meta name="keywords" content="Autonomous Surgery, Surgical Robotics, Vision-Language-Action, Embodied Foundation Model, Cholecystectomy">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Autonomous Robotic Surgery</title>
+  <title>SharpSurg: Safe Autonomous Long-Horizon Robotic Surgery</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
@@ -16,6 +18,7 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/site.css">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -26,25 +29,24 @@
 
   <link rel="icon" href="./favicon.ico">
 
-  <meta property="og:site_name" content="Auto-Surgery: Automated Surgery Robot System" />
+  <meta property="og:site_name" content="SharpSurg" />
   <meta property="og:type" content="video.other" />
-  <meta property="og:title" content="Auto-Surgery: Automated Surgery Robot System" />
-  <meta property="og:description" content="by Fan Qiao" />
+  <meta property="og:title" content="Safe autonomous long-horizon robotic surgery in live animals with an embodied foundation model" />
+  <meta property="og:description" content="SharpSurg is a safety-aware surgical robotic assistant integrating autonomous workflow planning, dexterous execution and anomaly management." />
   <meta property="og:url" content="https://auto-surgery.github.io/" />
-  <meta property="og:image" content="https://auto-surgery.github.io/static/images/preview.gif" />
-  <meta property="og:image:secure" content="https://auto-surgery.github.io/static/images/preview.gif" />
+  <meta property="og:image" content="https://auto-surgery.github.io/static/images/fig1_card.jpg" />
+  <meta property="og:image:secure" content="https://auto-surgery.github.io/static/images/fig1_card.jpg" />
   <meta property="og:video" content="" />
   <meta property="og:video:secure" content="" />
-  <meta property="og:image:width" content="1280" />
-  <meta property="og:image:height" content="720" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="1393" />
 
   <meta property="article:publisher" content="https://auto-surgery.github.io" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Auto-Surgery: Automated Surgery Robot System" />
-  <meta name="twitter:description" content="by Fan Qiao" />
+  <meta name="twitter:title" content="Safe autonomous long-horizon robotic surgery in live animals with an embodied foundation model" />
+  <meta name="twitter:description" content="SharpSurg is a safety-aware surgical robotic assistant integrating autonomous workflow planning, dexterous execution and anomaly management." />
   <meta name="twitter:url" content="https://auto-surgery.github.io/" />
-  <meta name="twitter:image" content="https://auto-surgery.github.io/static/images/preview.gif" />
-  <meta name="twitter:site" content="@zipengfu" />
+  <meta name="twitter:image" content="https://auto-surgery.github.io/static/images/fig1_card.jpg" />
   <meta name="twitter:card" content="player" />
   <meta name="twitter:player" content="" />
   <meta name="twitter:player:width" content="1280" />
@@ -56,14 +58,14 @@
 
 <body>
 
-<section class="hero">
+<section class="hero hero-main">
   <div class="hero-body">
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-two-thirds is-centered has-text-centered">
-          <h1 class="title is-1 publication-title">SHARP: Safety-aware Hierarchical Autonomous Robotic Planning for in vivo surgery</h1>
+          <h1 class="title is-1 publication-title">Safe autonomous long-horizon robotic surgery in live animals with an embodied foundation model</h1>
           <!-- <h2 class="subtitle is-2 publication-subtitle">Autonomous Robotic Surgery</h2> -->
-          <div class="is-size-4 publication-authors">
+          <div class="publication-authors">
             <span class="author-block">
               <a href="https://www.linkedin.com/in/yanran-wei/?locale=en_US">Yanran Wei</a><sup>1</sup>,
             </span>
@@ -71,7 +73,7 @@
               <a href="https://www.linkedin.com/in/fan-qiao-4724393b4/">Fan Qiao</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="#">Shuo Zhang</a><sup>1</sup>,
+              <a href="https://heifolier.github.io/ShuoZhang.github.io/">Shuo Zhang</a><sup>1</sup>,
             </span>
             <span class="author-block">
               <a href="#">Mingfeng Yao</a><sup>2</sup>,
@@ -92,14 +94,14 @@
               <a href="https://www.zhongkuili-pku.com/home/">Zhongkui Li</a><sup>1</sup>
             </span>
           </div>
-          <div class="is-size-5 publication-authors">
+          <div class="affiliations">
             <span class="author-block"><sup>1</sup>Peking University</span>
-            <span class="author-block" style="margin-left: 12px;"><sup>2</sup>MedBot</span>
+            <span class="author-block"><sup>2</sup>MedBot</span>
           </div>
-          <div style="display: flex; align-items: center; justify-content: center; gap: 40px;">
-            <image src="./static/images/Pku_logo_flat.jpg" style="height: 80px; object-fit: contain;">
-            <image src="./static/images/Medbot_Logo.jpg" style="height: 80px; object-fit: contain;">
-            <image src="./static/images/nvidia_log.png" style="height: 80px; object-fit: contain;">
+          <div class="org-logos">
+            <img class="org-logo" src="./static/images/Pku_logo_flat.jpg" alt="Peking University">
+            <img class="org-logo" src="./static/images/Medbot_Logo.jpg" alt="MedBot">
+            <img class="org-logo" src="./static/images/nvidia_log.png" alt="NVIDIA">
           </div>
           <!--
           <div>
@@ -169,19 +171,28 @@
       </div>
       <div class="columns is-centered">
         <div class="column is-two-thirds is-centered has-text-centered">
-          <video download controls autoplay loop muted playsinline src="./Videos/invivo.mp4" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+          <video class="teaser-video" controls autoplay loop muted playsinline
+                 src="./Videos/invivo.mp4" poster=""></video>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<nav class="page-nav" aria-label="Section navigation">
+  <ul>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#experiments">Experiments</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ul>
+</nav>
+
+<section class="section section-alt" id="team">
   <div class="container">
-    <h2 class="title is-2" style="text-align: center;">Team</h2>
-    <p style="text-align: center; margin-top: -10px; margin-bottom: 18px; color: #666; font-size: 0.95rem;">
-      Names are listed in no particular order.
-    </p>
+    <h2 class="title is-2">Team</h2>
+    <p class="section-lede">Names are listed in no particular order.</p>
     <div class="columns is-centered is-multiline team-grid">
       <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
         <a href="https://www.linkedin.com/in/yanran-wei/?locale=en_US" target="_blank" style="border-bottom: none;">
@@ -196,10 +207,10 @@
         <p class="team-member-name">Fan Qiao</p>
       </div>
       <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
-        <a href="#" target="_blank" style="border-bottom: none;">
+        <a href="https://heifolier.github.io/ShuoZhang.github.io/" target="_blank" style="border-bottom: none;">
           <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/ShuoZhang.jpg" alt="Shuo Zhang" /></span>
         </a>
-        <p class="team-member-name">Shuo Zhang</p>
+        <p class="team-member-name"><a href="https://heifolier.github.io/ShuoZhang.github.io/" target="_blank" style="color: inherit; border-bottom: none;">Shuo Zhang</a></p>
       </div>
       <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
         <a href="#" target="_blank" style="border-bottom: none;">
@@ -218,7 +229,7 @@
           <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/MengGuo.png" alt="Meng Guo" /></span>
         </a>
         <p class="team-member-name">Meng Guo</p>
-        <p style="margin: 0; font-size: 95%; color: #666;">(advisor)</p>
+        <p class="team-role">advisor</p>
       </div>
       <div class="column is-one-quarter-desktop is-half-tablet is-half-mobile is-centered has-text-centered team-card">
         <a href="#" target="_blank" style="border-bottom: none;">
@@ -237,26 +248,56 @@
           <span class="team-avatar-wrap"><img class="team-avatar" src="./static/images/ZhongkuiLi.jpg" alt="Zhongkui Li" /></span>
         </a>
         <p class="team-member-name">Zhongkui Li</p>
-        <p style="margin: 0; font-size: 95%; color: #666;">(advisor)</p>
+        <p class="team-role">advisor</p>
       </div>
     </div>
+  </div>
 </section>
 
-<section class="section">
+<section class="section" id="abstract">
   <div class="container">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-two-thirds">
-        <h2 class="title is-2">Overview</h2>
-        <div class="content has-text-centered">
-          <img src="./static/images/Overview.png" alt="Overview" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%; width: 100%; height: auto;">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content abstract-body">
+          <p>
+            Enabling an endoscopic surgical robot driven by an embodied foundation model to autonomously conduct complex, long-horizon surgery in living animals while prioritizing safety remains challenging. Existing studies on autonomous surgery have separately investigated automated manipulation and task recognition, rather than integrating them into long-horizon task execution, while often overlooking medical-domain rules that provide critical safety constraints for end-to-end methods. Here we present SharpSurg, a safety-aware surgical robotic assistant integrating autonomous workflow planning, dexterous execution and anomaly management. A dedicated task-recognition model and temporal rules govern procedure-subtask planning, whereas execution invokes surgical skills implemented by a foundation vision–language–action (VLA) model fine-tuned on surgical demonstrations. Its phase-conditioned VLA estimates respiratory phase information from endoscopic observations to adapt action generation to respiration-driven soft-tissue deformation. We collected multimodal surgical data from surgeon demonstrations on ex vivo tissues and living animals, together with data of intraoperative anomalies, to construct datasets for model development and evaluation, including testing in unseen scenarios and uncertainty quantification. Throughout surgery, surgeons can use a dedicated software interface to monitor task execution and the system&rsquo;s autonomous anomaly monitoring, diagnosis and recovery. Across in vivo cholecystectomy studies involving three pigs, SharpSurg achieved a 100% success rate (75/75). Ablations showed that enforcing subtask-completion criteria increased the valid transition rate by 43% (from 65.5% (57/87) to 94.3% (82/87)). SharpSurg correctly identified all 41 tested anomaly events spanning 5 anomaly scenarios, autonomously recovered from known anomalies using pretrained recovery skills, and correctly escalated unknown or predefined takeover events, achieving an overall anomaly-management success rate of 100% (41/41). Together, these results show that integrating foundation-model skills with rule-guided task progression, physiological conditioning and autonomous anomaly management supports reliable, safety-aware long-horizon robotic surgery.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section section-alt" id="overview">
+  <div class="container">
+    <!-- Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-10">
+        <h2 class="title is-2">Overview</h2>
+        <figure class="fig-card">
+          <a class="fig-zoom" href="./static/images/fig1.jpg" target="_blank" rel="noopener"
+             title="Open the full-resolution figure (6375 x 5550)">
+            <img src="./static/images/fig1.jpg"
+                 alt="Components of the SharpSurg autonomous surgical system">
+          </a>
+          <figcaption>
+            <b>Fig. 1 | Components of the SharpSurg autonomous surgical system.</b>
+            (<b>a</b>) Surgeon-facing supervisory interface.
+            (<b>b</b>) SHARP: algorithmic framework of SharpSurg, coupling learning-based task recognition
+            and rule-constrained subtask planning with respiratory-phase-conditioned VLA skill execution and
+            anomaly management in a closed loop.
+            (<b>c</b>) Patient-side multi-arm surgical robot.
+            <span class="fig-hint">Click the figure to open it at full resolution.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="experiments">
   <div class="container">
     <h2 class="title is-3 experiment-title">From Ex Vivo Validation to In Vivo Autonomous Surgery</h2>
     <div class="columns is-centered">
@@ -286,14 +327,13 @@
 
 
 
-<section class="section">
+<section class="section section-alt" id="acknowledgements">
   <div class="container">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-two-thirds">
         <h2 class="title is-2">Acknowledgements</h2>
-        <div class="content has-text-centered">
-          <p>
+        <div class="content">
+          <p class="ack-text">
             We would like to thank Ruijin Hospital for its support and collaboration.
           </p>
         </div>
