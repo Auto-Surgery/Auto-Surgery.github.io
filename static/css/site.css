@@ -154,6 +154,11 @@ a:hover { color: var(--accent-dark); }
   padding: 0 .5rem;
 }
 
+.org-logo-link {
+  display: inline-flex;
+  align-items: center;
+}
+
 .org-logo {
   height: clamp(38px, 5.4vw, 60px);
   width: auto;
